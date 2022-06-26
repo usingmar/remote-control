@@ -43,9 +43,11 @@ const main = async () => {
                 }
                 case "draw_rectangle":{
                     draw_rectangle(parseInt(incomingMessage.split(' ')[1]), parseInt(incomingMessage.split(' ')[2]));
+                    break;
                 }
                 case "draw_square":{
                     draw_square(parseInt(incomingMessage.split(' ')[1]));
+                    break;
                 }
                 case "prnt_scrn":
                     prnt_scrn(ws);
