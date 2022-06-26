@@ -8,5 +8,5 @@ export const draw_square = (a: number) => {
     robot.dragMouse(startPos.x, startPos.y + a);
     robot.dragMouse(startPos.x, startPos.y);
     robot.mouseToggle("up");
-    process.stdout.write(`draw_square ${a}\0`);
+    console.log(`draw_square ${a}\n`);
 }

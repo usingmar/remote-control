@@ -8,5 +8,5 @@ export const draw_rectangle = (a: number, b: number) => {
     robot.dragMouse(startPos.x, startPos.y + b);
     robot.dragMouse(startPos.x, startPos.y);
     robot.mouseToggle("up");
-    process.stdout.write(`draw_rectangle ${a},${b}\0`);
+    console.log(`draw_rectangle ${a},${b}\n`);
 }

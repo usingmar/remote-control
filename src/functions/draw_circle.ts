@@ -10,5 +10,5 @@ export const draw_circle = (radius: number) => {
         robot.dragMouse(x, y);
     }
     robot.mouseToggle("up");
-    process.stdout.write(`draw_circle ${radius}\0`);
+    console.log(`draw_circle ${radius}\n`);
 }

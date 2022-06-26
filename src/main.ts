@@ -13,8 +13,8 @@ const main = async () => {
     const server = new ws.Server({ port: 8181}, () => console.log('Server started on port 8181'));
 
     server.on('connection', (ws) => {
-        process.stdout.write("Connected");
-        process.stdout.write("WebSocket port: 8181");
+        process.stdout.write("\nClient connected\n");
+        process.stdout.write("\nWebSocket port: 8181\n");
         ws.on('message', (buffer: Buffer) => {
             let incomingMessage = buffer.toString();
             let command = incomingMessage.split(' ')[0];
@@ -55,12 +55,12 @@ const main = async () => {
             }
         });
         ws.on('close', () => {
-            process.stdout.write('Closed');
+            console.log("Socket was closed");
             ws.close();
         });
         process.on('SIGINT', function() {
-            console.log("Caught interrupt signal");
             ws.close();
+            console.log("Socket was closed");
             process.exit();
         });
     })

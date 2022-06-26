@@ -2,10 +2,10 @@
   "name": "remote-control",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "main.ts",
   "scripts": {
-    "start:dev": "nodemon ./src/index.ts",
-    "start": "tsc ./src/main.ts"
+    "start:dev": "nodemon ./src/main.ts",
+    "start": "ts-node ./src/main.ts"
   },
   "repository": {
     "type": "git",

@@ -3,7 +3,7 @@ import jimp from "jimp"
 import ws from "ws";
 
 export const prnt_scrn = (socket: ws.WebSocket) => {
-    process.stdout.write(`prnt_scrn\0`);
+    console.log(`prnt_scrn\n`);
     const startPos = robot.getMousePos();
     if(startPos.x > 100 && startPos.y > 100 &&
         startPos.x < robot.getScreenSize().width - 100 &&
@@ -18,7 +18,7 @@ export const prnt_scrn = (socket: ws.WebSocket) => {
         image_.getBase64(jimp.AUTO, (err:any, data_: any) => {
             if(err) throw new Error(err);
             socket.send(`prnt_scrn ${data_.slice(22)}`);
-            process.stdout.write(`prnt_scrn ${data_.slice(22)}\0`);
+            console.log(`prnt_scrn ${data_.slice(22)}\n`);
         });
       });
 }
